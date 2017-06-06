@@ -16,8 +16,6 @@
 		5C7AC6BF1EC95586006BB860 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AC6BE1EC95586006BB860 /* Utilities.m */; };
 		5C7AC6C51EC95B2F006BB860 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AC6C41EC95B2F006BB860 /* NSString+Extension.m */; };
 		5C7AC6C81EC95D27006BB860 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AC6C71EC95D27006BB860 /* UIImage+Extension.m */; };
-		5C7AC6CE1EC96006006BB860 /* CPLocationManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AC6CB1EC96006006BB860 /* CPLocationManger.m */; };
-		5C7AC6CF1EC96006006BB860 /* CPPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AC6CD1EC96006006BB860 /* CPPlacemark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +35,6 @@
 		5C7AC6C41EC95B2F006BB860 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		5C7AC6C61EC95D27006BB860 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		5C7AC6C71EC95D27006BB860 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
-		5C7AC6CA1EC96006006BB860 /* CPLocationManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLocationManger.h; sourceTree = "<group>"; };
-		5C7AC6CB1EC96006006BB860 /* CPLocationManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLocationManger.m; sourceTree = "<group>"; };
-		5C7AC6CC1EC96006006BB860 /* CPPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPlacemark.h; sourceTree = "<group>"; };
-		5C7AC6CD1EC96006006BB860 /* CPPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPPlacemark.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +51,6 @@
 		5C7AC6991EC95565006BB860 = {
 			isa = PBXGroup;
 			children = (
-				5C7AC6C91EC95FF6006BB860 /* Location */,
 				5C7AC6BC1EC95578006BB860 /* Utilitie */,
 				5C7AC6A41EC95565006BB860 /* Utilities */,
 				5C7AC6A31EC95565006BB860 /* Products */,
@@ -107,17 +100,6 @@
 				5C7AC6C71EC95D27006BB860 /* UIImage+Extension.m */,
 			);
 			path = Utilitie;
-			sourceTree = "<group>";
-		};
-		5C7AC6C91EC95FF6006BB860 /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				5C7AC6CA1EC96006006BB860 /* CPLocationManger.h */,
-				5C7AC6CB1EC96006006BB860 /* CPLocationManger.m */,
-				5C7AC6CC1EC96006006BB860 /* CPPlacemark.h */,
-				5C7AC6CD1EC96006006BB860 /* CPPlacemark.m */,
-			);
-			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C7AC6C51EC95B2F006BB860 /* NSString+Extension.m in Sources */,
-				5C7AC6CE1EC96006006BB860 /* CPLocationManger.m in Sources */,
 				5C7AC6AD1EC95565006BB860 /* ViewController.m in Sources */,
-				5C7AC6CF1EC96006006BB860 /* CPPlacemark.m in Sources */,
 				5C7AC6AA1EC95565006BB860 /* AppDelegate.m in Sources */,
 				5C7AC6C81EC95D27006BB860 /* UIImage+Extension.m in Sources */,
 				5C7AC6BF1EC95586006BB860 /* Utilities.m in Sources */,
