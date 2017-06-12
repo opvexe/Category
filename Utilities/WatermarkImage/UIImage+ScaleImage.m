@@ -320,4 +320,50 @@
     return returnImage;
 }
 
++ (UIImage *)xzSizeImage:(UIImageView *)currentImageView xzSizeRefresh:(UIImage *)image
+{
+    //要加载的图片取其宽和高中较小的那个值
+    CGFloat widthAndH = (image.size.height>image.size.width)?image.size.width:image.size.height;
+    
+    CGRect rect;
+    
+    //要加载图片的UIImageView宽和高中较大的那个值 然后按照等比例去截取图片使其被压缩时不变形
+    if (currentImageView.frame.size.height > currentImageView.frame.size.width) {
+        
+        rect = CGRectMake(0, 0, currentImageView.frame.size.width*widthAndH/currentImageView.frame.size.height, widthAndH);
+        
+    }else{
+        
+        rect = CGRectMake(0, 0, widthAndH, currentImageView.frame.size.height*widthAndH/currentImageView.frame.size.width);
+        
+    }
+    
+    UIImage *imageRegresh = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([image CGImage], rect)];
+    
+    UIImage *xzSizeImage;
+    
+    //要判断将要压缩的图片的尺寸大小是不是大于我们想要的那个尺寸 在做相应处理
+    if (widthAndH>currentImageView.frame.size.width*2 && widthAndH>currentImageView.frame.size.height*2) {
+        
+        CGSize size = CGSizeMake(currentImageView.frame.size.width*2, currentImageView.frame.size.height*2);
+        
+        xzSizeImage = [self reSizeImage:imageRegresh toSize:size];
+        
+    }else{
+        
+        xzSizeImage = imageRegresh;
+        
+    }
+    
+    return xzSizeImage;
+}
++ (UIImage *)reSizeImage:(UIImage *)image toSize:(CGSize)reSize
+{
+    UIGraphicsBeginImageContext(CGSizeMake(reSize.width, reSize.height));
+    [image drawInRect:CGRectMake(0, 0, reSize.width, reSize.height)];
+    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return reSizeImage;
+}
+
 @end

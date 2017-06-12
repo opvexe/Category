@@ -54,12 +54,17 @@
                                         alpha:(CGFloat)alpha
                                    waterScale:(BOOL)waterScale;
 /**
- 设置高斯模糊
+ *Fiter 方法设置高斯模糊
  */
 +(nullable __kindof UIImage *)setGaussianBlur:(nullable __kindof UIImage *)img;
 /**
- 设置高斯模糊
+ *设置高斯模糊
  */
 + (nullable __kindof UIImage *)boxblurImage:(nullable __kindof UIImage *)image withBlurNumber:(CGFloat)blur;
+/**
+ *防止图片压缩拉伸变形
+ */
++ (nullable __kindof UIImage *)xzSizeImage:(nullable __kindof UIImageView *)currentImageView xzSizeRefresh:(nullable __kindof UIImage *)image;
 
++ ( nullable __kindof UIImage *)reSizeImage:(nullable __kindof UIImage *)image toSize:(CGSize)reSize;
 @end
