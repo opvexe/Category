@@ -13,6 +13,14 @@
 
 @interface UIImage (ScaleImage)
 /**
+ *  将颜色转换成图片
+ */
++(nullable UIImage *)imageWithColor:(UIColor *)color;
+/**
+ *  将颜色转换成图片 RGB
+ */
++(nullable UIImage *)imageWithRGB:(int)color alpha:(float)alpha;
+/**
  *  图片拉伸,适应空间,不改变像素
  */
 +(nullable UIImage *)resizableImageWithSourceImage:(nonnull UIImage *)image;

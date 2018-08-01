@@ -9,8 +9,50 @@
 #import "UIImage+ScaleImage.h"
 
 @implementation UIImage (ScaleImage)
-+(nullable UIImage *)resizableImageWithSourceImage:(nonnull UIImage *)image
-{
+
++(nullable UIImage *)imageWithColor:(UIColor *)color{
+     return [UIImage imageWithColor:color size:CGSizeMake(1, 1)];
+}
+
++(nullable UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    return [UIImage imageWithColor:color size:size cornerRadius:0.0f];
+}
+
++(nullable UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(CGFloat)radius {
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(ctx);
+    if (radius > 0.0f && radius <= size.width && radius <= size.height) {
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, size.width, size.height) cornerRadius:radius];
+        [color setFill];
+        [path fill];
+    } else {
+        CGContextSetFillColorWithColor(ctx, color.CGColor);
+        CGContextFillRect(ctx, CGRectMake(0, 0, size.width, size.height));
+    }
+    CGContextRestoreGState(ctx);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
++(nullable UIImage *)imageWithRGB:(int)color alpha:(float)alpha{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [[self colorWithRGB:color alpha:alpha] CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
++(UIColor *)colorWithRGB:(int)color alpha:(float)alpha{
+    return [UIColor colorWithRed:((Byte)(color >> 16))/255.0 green:((Byte)(color >> 8))/255.0 blue:((Byte)color)/255.0 alpha:alpha];
+}
+
+
++(nullable UIImage *)resizableImageWithSourceImage:(nonnull UIImage *)image{
     UIImage *newImage=[image resizableImageWithCapInsets:UIEdgeInsetsMake(image.size.height*0.5, image.size.width*0.5, image.size.height*0.5-1, image.size.width*0.5-1) resizingMode:UIImageResizingModeTile];
     //Methd 2
   // UIImage *newImage = [image  stretchableImageWithLeftCapWidth:image.size.width*0.5 topCapHeight:image.size.height*0.5];
