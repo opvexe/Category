@@ -59,7 +59,7 @@
 + (UIFont *)SYPingFangSCSemiboldFontOfSize:(CGFloat)fontSize;
 
 /**
- 
+ SYHelveticaFontOfSize
  
  @param fontSize 设置字体大小
  @return return value description

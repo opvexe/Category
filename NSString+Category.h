@@ -60,6 +60,14 @@ NSString* MD5_32Bit_Lower(NSString* input);
  */
 NSString* MD5_32Bit_Upper(NSString* input);
 /**
+ *  Base64加密
+ */
+NSString *base64Encoding(NSString *string);
+/**
+ *  Base64解密
+ */
+NSString *decodingBase64(NSString *sourceString);
+/**
  *  URL编码
 
  @param url 输入编码的URL
@@ -246,4 +254,12 @@ NSString *intervalSinceNow(NSString *theDate);
  @return 返回公里字符 1KM 100M
  */
 NSString *DistanceConversion(NSString *distance);
+
+/**
+ * 计算文件大小
+
+ @param totalSize 总字节
+ @return 文件大小
+ */
+NSString *cacheSizeStr(NSInteger _totalSize);
 @end

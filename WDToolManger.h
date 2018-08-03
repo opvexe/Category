@@ -46,10 +46,54 @@
  *  判断麦克风权限
  */
 +(BOOL)canRecord;
+/**
+ *  64base字符串转图片
+ */
++ (UIImage *)stringToImage:(NSString *)str;
+/**
+ *  图片转64base字符串
+ */
++ (NSString *)imageToString:(UIImage *)image;
 
-
-
-
+#pragma mark  Equipment Information
+/**
+ *  获取APP  BunddleID
+ */
+NSString *zcGetAppBunddleID(void);
+/**
+ *  获取当前手机设置的语言  BOOL
+ *  返回是否是英语
+ */
+int  zcGetAppLanguages(void);
+/**
+ *  获取手机设置语言
+ */
+NSString *zcGetLanguages(void);
+/**
+ *  获取APP名称
+ */
+NSString *zcGetAppName(void);
+/**
+ *  获取APP版本号
+ */
+NSString *zcGetAppVersion(void);
+/**
+ *  获取手机型号
+ */
+NSString *zcGetIphoneType(void);
+/**
+ *   获取当前手机的分辨率
+ */
+NSString *zcGetScreenScale(void);
+/**
+ *   获取运营商信息
+ */
+NSString *zcGetIphoneOperators(void);
+/**
+ *   获取设备UUID
+ */
+NSString *zcGetIphoneUUID(void);
+#pragma mark  GetHeightContain
 /**
  *  获取对应高度
  */
@@ -59,8 +103,9 @@
  *  获取对应宽度
  */
 +(CGFloat)getWidthContain:(NSString *)string font:(UIFont *)font Height:(CGFloat) height;
-
-
-
-
+/**
+ *  获取对应宽度 (中文 + 数字 组合 计算高度)
+ */
++ (CGRect)getTextRectWith:(NSString *)str WithMaxWidth:(CGFloat)width  WithlineSpacing:(CGFloat)LineSpacing AddLabel:(UILabel *)label;
++(CGRect)getTextRectWith:(NSString *)str WithMaxWidth:(CGFloat)width WithTextFont:(UIFont*)font  WithlineSpacing:(CGFloat)LineSpacing AddLabel:(UILabel *)label;
 @end
